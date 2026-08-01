@@ -664,13 +664,26 @@ h3 {
   }
 
   .project-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .project-grid,
   .project-card,
   .project-card-featured {
+    flex: 0 0 86%;
+    min-width: 86%;
     grid-column: auto;
+    scroll-snap-align: start;
+  }
+
+  .project-card-featured {
+    flex-basis: 92%;
+    min-width: 92%;
   }
 
   .section-heading {
